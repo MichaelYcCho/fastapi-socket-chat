@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "makestar"
+version = "0.1.0"
+description = ""
+authors = ["Michael Youngchan CHO <michael.yc.cho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+uvicorn = "^0.30.1"
+websockets = "^12.0"
+sqlalchemy = "^2.0.31"
+pytest = "^8.2.2"
+httpx = "^0.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
