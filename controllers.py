@@ -1,9 +1,7 @@
-from fastapi import WebSocket, WebSocketDisconnect, Depends
-from sqlalchemy.orm import Session
 import json
+from fastapi import WebSocket, WebSocketDisconnect
 from services import (
     get_user_by_ip,
-    get_user_by_name,
     create_user,
     handle_personal_message,
     handle_group_message,
@@ -34,14 +32,11 @@ async def websocket_endpoint(websocket: WebSocket):
     try:
         # 실제 서비스에서는 주석 처리된 부분을 사용
         ip_address = websocket.client.host
-        # ip_address = "159.12.3.1"
-        # print("ip_address", ip_address)
-
+        # ip_address = "127.0.0.1"
         user = get_user_by_ip(db, ip_address)
         if not user:
             user = create_user(db, ip_address)
         user_id = str(user.id)
-        print("user_id", user_id)
 
         await manager.connect(websocket, user_id)
         try:
