@@ -1,5 +1,9 @@
 # FastAPI Chat Application
 
+
+### 관련된 모델정보및 다이어그램은 /docs/fast-api-chat.drawio.pdf 파일을 참조해주세요.
+
+
 ## 개요
 이 프로젝트는 FastAPI를 사용하여 구축된 간단한 채팅 애플리케이션입니다. 사용자는 1:1 채팅 및 그룹 채팅을 할 수 있으며, 메시지는 SQLite 데이터베이스에 저장됩니다. 이 프로젝트는 Docker와 Docker Compose를 사용하여 배포하고 테스트할 수 있습니다.
 
